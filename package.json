@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist/*",
-    "copy-assets": "mkdir -p dist/images && cp public/images/DOMspy*.png dist/images/ && cp public/{manifest.json,popup.html} dist/",
-    "build": "npm run clean && tsx ./scripts/build.ts",
+    "copy-assets": "mkdir -p dist/images && cp public/images/DOMspy*.png dist/images/ && cp manifest.json dist/ && cp public/popup.html dist/",
+    "build": "npm run clean && tsx ./scripts/build.ts && npm run copy-assets",
     "dev": "npx vite build --watch",
     "preview": "npx vite preview",
     "test": "vitest",
