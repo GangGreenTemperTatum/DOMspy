@@ -1,0 +1,33 @@
+name: Pre-commit Checks
+
+on:
+  pull_request:
+  push:
+    branches: [main, develop]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npx eslint . --ext .js,.svelte
+
+      - name: Check Svelte formatting
+        run: npx prettier --check "**/*.svelte"
+
+      - name: Run tests
+        run: npm test
+
+      - name: Build check
+        run: npm run build

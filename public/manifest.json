@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "DOMspy",
+  "version": "1.0",
+  "description": "DOM testing with some brrrrr",
+  "icons": {
+    "48": "images/DOMspy48.png",
+    "128": "images/DOMspy128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "images/DOMspy48.png",
+      "128": "images/DOMspy128.png"
+    }
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "downloads"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["content.js"],
+    "matches": ["http://*/*", "https://*/*"]
+  }],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "author": {
+    "email": "ads.dawson@owasp.org"
+  },
+  "homepage_url": "https://github.com/GangGreenTemperTatum/DOMspy"
+}
