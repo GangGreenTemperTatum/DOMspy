@@ -1,14 +1,10 @@
 name: PR Build Check
 
 on:
-  pull_request:
-    branches: ["main", "chore/housekeeping-ci-build-workflow"]
   push:
-    branches:
-      - "feature/**"
-      - "bugfix/**"
-      - "hotfix/**"
-      - "release/**"
+    branches: ["main", "chore/housekeeping-ci-build-workflow"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   build:
