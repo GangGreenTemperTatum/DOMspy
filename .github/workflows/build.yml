@@ -11,22 +11,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 #v4.2.2
 
       - name: Use Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af #v4.1.0
         with:
-          node-version: "22.10.0"
+          node-version: "20.11.1"
+          cache: "npm"
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Clean install
+        run: |
+          rm -rf node_modules
+          rm -f package-lock.json
+          npm install
+
+      - name: Install platform specific dependencies
+        run: |
+          npm install @rollup/rollup-linux-x64-gnu
 
       - name: Build project
         run: npm run build
 
       - name: Run tests
         run: npm test
-
       - name: Lint code
         run: npm run lint
 
