@@ -23,7 +23,6 @@
     "webRequest"
   ],
   "host_permissions": [
-    "https://api.ipify.org/*",
     "http://*/*",
     "https://*/*"
   ],
