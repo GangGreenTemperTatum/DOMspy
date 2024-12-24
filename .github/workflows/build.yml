@@ -19,12 +19,21 @@ jobs:
           node-version: "20.11.1"
           cache: "npm"
 
-      - name: Debug file structure
+      - name: Debug files
         run: |
           echo "Current directory structure:"
           tree src/
+          echo "Content of logger.ts:"
+          cat src/lib/logger.ts
           echo "Content of popup.ts:"
           cat src/popup/popup.ts
+
+      - name: Verify imports
+        run: |
+          if [ ! -f "src/lib/logger.ts" ]; then
+            echo "Error: logger.ts not found"
+            exit 1
+          fi
 
       - name: Clean install
         run: |
