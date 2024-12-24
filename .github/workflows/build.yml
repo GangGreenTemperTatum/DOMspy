@@ -55,7 +55,12 @@ jobs:
           cat dist/popup.js || true
 
       - name: Lint code
-        run: npm run lint
+        run: |
+          npx eslint . \
+            --config eslintrc.ts \
+            --ignore-pattern 'node_modules/*' \
+            --ignore-pattern 'dist/*' \
+             '**/*.{js,ts,svelte}'
 
       - name: Check manifest version
         run: |
