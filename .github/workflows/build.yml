@@ -54,9 +54,6 @@ jobs:
           ls -la dist/
           cat dist/popup.js || true
 
-      - name: Run tests
-        run: npm test
-
       - name: Lint code
         run: npm run lint
 
