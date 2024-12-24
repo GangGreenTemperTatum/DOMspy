@@ -1,4 +1,4 @@
-import { logger } from '../lib/Logger';
+import { logger } from '../lib/logger';
 import Popup from './Popup.svelte';
 
 function initPopup() {
