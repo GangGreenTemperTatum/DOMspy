@@ -19,6 +19,13 @@ jobs:
           node-version: "20.11.1"
           cache: "npm"
 
+      - name: Debug file structure
+        run: |
+          echo "Current directory structure:"
+          tree src/
+          echo "Content of popup.ts:"
+          cat src/popup/popup.ts
+
       - name: Clean install
         run: |
           rm -rf node_modules
@@ -32,8 +39,15 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Show build artifacts
+        if: failure()
+        run: |
+          ls -la dist/
+          cat dist/popup.js || true
+
       - name: Run tests
         run: npm test
+
       - name: Lint code
         run: npm run lint
 
