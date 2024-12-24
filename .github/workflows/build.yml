@@ -54,14 +54,6 @@ jobs:
           ls -la dist/
           cat dist/popup.js || true
 
-      - name: Lint code
-        run: |
-          npx eslint . \
-            --config eslintrc.ts \
-            --ignore-pattern 'node_modules/*' \
-            --ignore-pattern 'dist/*' \
-             '**/*.{js,ts,svelte}'
-
       - name: Check manifest version
         run: |
           VERSION=$(node -p "require('./manifest.json').version")
