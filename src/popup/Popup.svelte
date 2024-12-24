@@ -4,13 +4,14 @@
   import type { Message, ElementData } from '../types';
   import DOMAnalyzer from './components/DOMAnalyzer.svelte';
   import DOMTree from './components/DOMTree.svelte';
+  import ProxySettings from './components/ProxySettings.svelte';
 
   let messages: Message[] = [];
   let selectedElement: ElementData | null = null;
   let isHighlighting = false;
   let domAnalysis: any = { _children: [] };
   let analysisOrder: 'nodes' | 'depth' | 'length' = 'length';
-  let activeTab: 'tester' | 'analyzer' | 'tree' = 'tester';
+  let activeTab: 'proxy' | 'tester' | 'analyzer' | 'tree' = 'proxy';
   let domTreeData: any = { tag: '#document', children: [] };
 
   const testPayloads = [
@@ -250,7 +251,7 @@
     messages = [];
   }
 
-  async function handleTabChange(newTab: 'tester' | 'analyzer' | 'tree') {
+  async function handleTabChange(newTab: 'proxy' | 'tester' | 'analyzer' | 'tree') {
     const currentTab = await getCurrentTab();
 
     if (currentTab?.id && await isValidTab(currentTab)) {
@@ -282,6 +283,12 @@
     </div>
     <nav class="tabs">
       <button
+        class:active={activeTab === 'proxy'}
+        on:click={() => handleTabChange('proxy')}>
+        <span class="icon">⚙️</span>
+        Settings
+      </button>
+      <button
         class:active={activeTab === 'tester'}
         on:click={() => handleTabChange('tester')}>
         <span class="icon">🎯</span>
@@ -303,7 +310,9 @@
   </header>
 
   <div class="content">
-    {#if activeTab === 'tester'}
+    {#if activeTab === 'proxy'}
+      <ProxySettings />
+    {:else if activeTab === 'tester'}
       <!-- Selected Element Display -->
       {#if selectedElement}
         <section class="selected-element">
@@ -341,7 +350,7 @@
         {analysisOrder}
         onAnalyze={analyzeDom}
       />
-    {:else}
+    {:else if activeTab === 'tree'}
       <DOMTree domAnalysis={domTreeData} />
     {/if}
   </div>

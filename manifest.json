@@ -18,7 +18,14 @@
     "activeTab",
     "scripting",
     "storage",
-    "downloads"
+    "downloads",
+    "proxy",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "https://api.ipify.org/*",
+    "http://*/*",
+    "https://*/*"
   ],
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],

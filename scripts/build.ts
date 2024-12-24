@@ -1,5 +1,6 @@
 import { build } from 'vite';
 import { copy } from 'fs-extra';
+import { copyFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
@@ -82,6 +83,15 @@ async function buildExtension() {
         ] : []
       });
     }
+
+    // Copy static files
+    await Promise.all([
+      copyFile('public/popup.html', 'dist/popup.html'),
+      copyFile('public/options.html', 'dist/options.html'),
+      copyFile('manifest.json', 'dist/manifest.json'), // Updated path
+      copyFile('public/images/DOMspy48.png', 'dist/images/DOMspy48.png'),
+      copyFile('public/images/DOMspy128.png', 'dist/images/DOMspy128.png'),
+    ]);
 
     console.log('✅ Build completed successfully!');
   } catch (error) {
