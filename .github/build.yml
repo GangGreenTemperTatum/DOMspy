@@ -2,7 +2,7 @@ name: PR Build Check
 
 on:
   pull_request:
-    branches: [main]
+    branches: ["main", "chore/housekeeping-ci-build-workflow"]
   push:
     branches:
       - "feature/**"
