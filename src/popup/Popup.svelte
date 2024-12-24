@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
-  import { logger } from '../lib/Logger';
+  import { logger } from '../lib/logger';
   import type { Message, ElementData } from '../types';
   import DOMAnalyzer from './components/DOMAnalyzer.svelte';
   import DOMTree from './components/DOMTree.svelte';

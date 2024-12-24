@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DOMspy",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Web security tool to help developers and security professionals understand the DOM and how it can be manipulated.",
   "icons": {
     "48": "images/DOMspy48.png",
@@ -22,11 +22,11 @@
   ],
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["content.js"],
+    "js": ["content.ts"],
     "run_at": "document_idle"
   }],
   "web_accessible_resources": [{
-    "resources": ["content.js"],
+    "resources": ["content.ts"],
     "matches": ["http://*/*", "https://*/*"]
   }],
   "background": {
