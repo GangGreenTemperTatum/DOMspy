@@ -11,6 +11,32 @@ chrome.tabs.onUpdated.addListener((tabId: number, changeInfo: TabChangeInfo, tab
     }
 });
 
+chrome.runtime.onInstalled.addListener(() => {
+    console.log('DOMspy extension installed');
+});
+
+// Handle proxy authentication
+chrome.webRequest.onAuthRequired.addListener(
+    async (details) => {
+        const { proxyConfig } = await chrome.storage.local.get('proxyConfig');
+        if (proxyConfig?.username && proxyConfig?.password) {
+            return {
+                authCredentials: {
+                    username: proxyConfig.username,
+                    password: proxyConfig.password
+                }
+            };
+        }
+    },
+    { urls: ["<all_urls>"] },
+    ["asyncBlocking"]
+);
+
+// Handle proxy errors
+chrome.proxy.onProxyError.addListener((details) => {
+    console.error('Proxy error:', details);
+});
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     console.log('Background received message:', request);
 
