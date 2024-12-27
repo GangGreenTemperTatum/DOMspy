@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DOMspy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web security tool to help developers and security professionals understand the DOM and how it can be manipulated.",
   "icons": {
     "48": "images/DOMspy48.png",
@@ -17,7 +17,6 @@
   "permissions": [
     "activeTab",
     "scripting",
-    "storage",
     "downloads"
   ],
   "content_scripts": [{

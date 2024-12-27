@@ -67,7 +67,7 @@ jobs:
       - name: Validate manifest permissions
         run: |
           PERMISSIONS=$(node -p "JSON.stringify(require('./manifest.json').permissions)")
-          EXPECTED_PERMISSIONS='["activeTab","scripting","storage","downloads"]'
+          EXPECTED_PERMISSIONS='["activeTab","scripting","downloads"]'
           if [ "$PERMISSIONS" = "$EXPECTED_PERMISSIONS" ]; then
             echo "Manifest permissions are valid"
           else
