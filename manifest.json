@@ -21,11 +21,11 @@
   ],
   "content_scripts": [{
     "matches": ["http://*/*", "https://*/*"],
-    "js": ["content.ts"],
+    "js": ["content.js"],
     "run_at": "document_idle"
   }],
   "web_accessible_resources": [{
-    "resources": ["content.ts"],
+    "resources": ["content.js"],
     "matches": ["http://*/*", "https://*/*"]
   }],
   "background": {
