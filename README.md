@@ -1,6 +1,6 @@
 # DOMspy Chrome Extension
 
-DOMspy is a Chrome DevTools extension focused on DOM security research and analysis. Currently available on the Chrome Web Store, this project is in active development with advanced testing features coming soon.
+DOMspy is a Chrome DevTools extension focused on DOM security research and analysis. Currently [available on the Chrome Web Store](https://chromewebstore.google.com/detail/domspy/lkohdnochhmepplamlachopogndhkghm), this project is in active development with advanced testing features coming soon.
 
 <br clear="left"/>
 
@@ -11,12 +11,12 @@ DOMspy is a Chrome DevTools extension focused on DOM security research and analy
 <br>
 <br>
 
-[![Available in the Chrome Web Store](https://img.shields.io/chrome-web-store/v/lkohdnochhmepplamlachopogndhkghm.svg)](https://chrome.google.com/webstore/detail/domspy/lkohdnochhmepplamlachopogndhkghm)
+[![Available in the Chrome Web Store](https://img.shields.io/chrome-web-store/v/lkohdnochhmepplamlachopogndhkghm.svg)](https://chromewebstore.google.com/detail/domspy/lkohdnochhmepplamlachopogndhkghm)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/GangGreenTemperTatum/DOMspy)](https://github.com/GangGreenTemperTatum/DOMspy/releases)
 [![GitHub stars](https://img.shields.io/github/stars/GangGreenTemperTatum/DOMspy?style=social)](https://github.com/GangGreenTemperTatum/DOMspy/stargazers)
 [![GitHub license](https://img.shields.io/github/license/GangGreenTemperTatum/DOMspy)](https://github.com/GangGreenTemperTatum/DOMspy/blob/main/LICENSE)
 
-[Chrome Web Store](https://chrome.google.com/webstore/detail/domspy/lkohdnochhmepplamlachopogndhkghm) •
+[Chrome Web Store](https://chromewebstore.google.com/detail/domspy/lkohdnochhmepplamlachopogndhkghm) •
 [Report Bug](https://github.com/GangGreenTemperTatum/DOMspy/issues) •
 [Request Feature](https://github.com/GangGreenTemperTatum/DOMspy/issues)
 
