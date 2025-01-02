@@ -57,13 +57,32 @@ DOMspy is a Chrome DevTools extension focused on DOM security research and analy
 ---
 
 ## Features
-- Web Message Interception & Monitoring
-- Prototype Pollution Detection
-- DOM Clobbering Detection
-- DevTools Panel Integration
 - Real-time DOM Element Highlighting
-- Interactive Payload Testing
-- Message Modification and Replay
+  - Interactive element selection with Alt/Option key
+  - Visual highlighting of hovered elements
+  - Persistent element highlighting with click
+
+- Comprehensive DOM Analysis
+  - Tree visualization of DOM structure
+  - Element distribution statistics
+  - DOM complexity metrics
+  - Deep node analysis
+  - Exportable DOM tree data
+
+- DOM Tree Navigation
+  - Expandable tree view
+  - Element attribute inspection
+  - Search functionality
+  - Copyable tree data
+  - HTML/Text export options
+
+- Developer Tools
+  - Message logging system
+  - Element selection tools
+  - Dark mode interface
+  - Structured data display
+
+Note: Additional security testing features (XSS Detection, Prototype Pollution, DOM Clobbering) are currently under development and will be available in future releases.
 
 ---
 
