@@ -20,8 +20,8 @@
     "@types/chrome": "^0.0.xxx",
     "@types/eslint": "^9.6.1",
     "@types/node": "^22.x.x",
-    "@typescript-eslint/eslint-plugin": "^8.19.1",
-    "@typescript-eslint/parser": "^8.19.1",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
     "eslint": "^9.18.0",
     "eslint-plugin-svelte": "^2.0.0",
     "fs-extra": "^11.3.0",
@@ -33,7 +33,7 @@
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.7.3",
-    "vite": "^6.0.7",
+    "vite": "^6.0.9",
     "vitest": "^2.1.8",
     "tsx": "^4.7.0"
   }
