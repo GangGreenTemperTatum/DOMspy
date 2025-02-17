@@ -22,7 +22,7 @@
     "@types/node": "^22.x.x",
     "@typescript-eslint/eslint-plugin": "^8.23.0",
     "@typescript-eslint/parser": "^8.23.0",
-    "eslint": "^9.20.0",
+    "eslint": "^9.20.1",
     "eslint-plugin-svelte": "^2.0.0",
     "fs-extra": "^11.3.0",
     "prettier": "^3.5.1",
