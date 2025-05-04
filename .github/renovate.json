@@ -1,0 +1,51 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":disableRateLimiting",
+    ":dependencyDashboard",
+    ":semanticCommits",
+    ":enablePreCommit",
+    ":automergeDigest",
+    ":automergeBranch"
+  ],
+  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
+  "suppressNotifications": ["prIgnoreNotification"],
+  "rebaseWhen": "conflicted",
+  "commitBodyTable": true,
+  "pre-commit": {
+    "enabled": true
+  },
+  "enabledManagers": ["npm", "github-actions"],
+  "timezone": "America/New_York",
+  "schedule": ["before 4am"],
+  "labels": ["dependency"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@caido/"],
+      "groupName": "Caido packages",
+      "automerge": false
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "dev dependencies"
+    },
+    {
+      "matchPackagePatterns": ["^@types/"],
+      "groupName": "typescript-types"
+    },
+    {
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint packages"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  }
+}
