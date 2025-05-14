@@ -1,12 +1,11 @@
----
 name: Update PR Description with Rigging
+
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
 
 jobs:
   update-description:
-    name: Update PR Description with Rigging
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -20,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
-          python-version: "3.13"
+          python-version: "3.10"
 
       - name: Install uv
         run: |
@@ -32,12 +31,10 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          DESCRIPTION="$(uv run --no-project .hooks/generate_pr_description.py --base-ref "origin/${{ github.base_ref }}" --exclude "./*.lock")"
-          {
-            echo "description<<EOF"
-            echo "${DESCRIPTION}"
-            echo "EOF"
-          } >> "$GITHUB_OUTPUT"
+          DESCRIPTION=$(uv run --no-project .github/scripts/rigging_pr_decorator.py --base-ref origin/${{ github.base_ref }} --exclude *.lock)
+          echo "description<<EOF" >> $GITHUB_OUTPUT
+          echo "$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Update PR Description
         uses: nefrob/pr-description@4dcc9f3ad5ec06b2a197c5f8f93db5e69d2fdca7 # v1.2.0
@@ -47,8 +44,8 @@ jobs:
 
             ---
 
-            ## Generated Summary:
+            ## Generated Summary
 
             ${{ steps.description.outputs.description }}
 
-            This summary was generated with ❤️ by [rigging](https://rigging.dreadnode.io/)
+            This summary was generated with ❤️ by [rigging](https://docs.dreadnode.io/rigging/)
