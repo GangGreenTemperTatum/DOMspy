@@ -61,6 +61,24 @@
       "matchPackageNames": [
         "/eslint/"
       ]
+    },
+    {
+      "matchPackageNames": [
+        "/lint/",
+        "/prettier/"
+      ],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor"],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true
     }
   ],
   "vulnerabilityAlerts": {
