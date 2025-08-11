@@ -20,7 +20,7 @@
     "@types/chrome": "^0.1.0",
     "@types/eslint": "^9.6.1",
     "@types/node": "^24.x.x",
-    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.31.1",
     "eslint": "^9.31.0",
     "eslint-plugin-svelte": "^3.9.1",
@@ -32,7 +32,7 @@
     "svelte-preprocess": "^6.0.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.8.3",
+    "typescript": "^5.9.2",
     "vite": "^7.0.0",
     "vitest": "^3.1.2",
     "tsx": "^4.19.4"
